@@ -8,9 +8,7 @@ This repository contains the examples for the pandas tutorial
 ## Downloading the tutorial materials
 If you have git installed, you can get the material in this tutorial by cloning this repo:
 
-git clone 
-
-As an alternative, you can download it as a zip file: https://github.com/shashankvishwakarma/pandas-tutorial/archive/master.zip.
+git clone https://github.com/shashankvishwakarma/pandas-for-data-analysis.git
 
 ## Content
 - Pandas Operation
