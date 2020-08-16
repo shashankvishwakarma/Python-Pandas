@@ -22,7 +22,7 @@ print(df.describe())
 
 # conditionally selecting data
 print(df[df["temperature"] >= 32])
-print(df[["day","temperature"]][df.temperature == df.temperature.max()])
+print(df[["day", "temperature"]][df.temperature == df.temperature.max()])
 
 print(df.index)
 df.set_index("day", inplace=True)
