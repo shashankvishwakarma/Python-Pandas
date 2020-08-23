@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 
 df = pd.read_csv("datasets/weather_data_with_missing_data.csv", parse_dates=["day"])
 print(type(df.day[0]))  # parsing day to date
@@ -43,4 +44,14 @@ print(new_df)
 date_range = pd.date_range("01-01-2017", "01-11-2017")
 idx = pd.DatetimeIndex(date_range)
 new_df = df.reindex(idx)
+print(new_df)
+
+new_df - df.replace([-99999, -88888], np.NaN)
+print(new_df)
+
+new_df - df.replace({
+    "temperature": -99999,
+    "windspeed": -88888,
+    "event": "0"
+}, np.NaN)
 print(new_df)
