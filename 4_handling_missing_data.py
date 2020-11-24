@@ -46,12 +46,35 @@ idx = pd.DatetimeIndex(date_range)
 new_df = df.reindex(idx)
 print(new_df)
 
-new_df - df.replace([-99999, -88888], np.NaN)
+# Replacing list with single value
+new_df = df.replace([-99999, -88888], np.NaN)
 print(new_df)
 
-new_df - df.replace({
+# Replacing per column
+new_df = df.replace({
     "temperature": -99999,
     "windspeed": -88888,
     "event": "0"
 }, np.NaN)
 print(new_df)
+
+# regex - when windspeed is 6 mph, 7 mph etc. & temperature is 32 F, 28 F etc.
+new_df = df.replace({'temperature': '[A-Za-z]', 'windspeed': '[a-z]'}, '', regex=True)
+print(new_df)
+
+# Replacing by using mapping
+new_df = df.replace({
+    -99999: np.nan,
+    'no event': 'Sunny',
+})
+print(new_df)
+
+df = pd.DataFrame({
+    'score': ['exceptional', 'average', 'good', 'poor', 'average', 'exceptional'],
+    'student': ['rob', 'maya', 'parthiv', 'tom', 'julian', 'erica']
+})
+print(df)
+
+# Replacing list with another list
+df = df.replace(['poor', 'average', 'good', 'exceptional'], [1, 2, 3, 4])
+print(df)

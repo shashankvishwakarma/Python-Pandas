@@ -24,4 +24,4 @@ print(df)
 
 df.to_csv("new.csv")  # by default it will write index as well
 
-df.to_csv("new.csv", index=False) # by default it will write index as well
+df.to_csv("new.csv", index=False)  # by default it will write index as well
